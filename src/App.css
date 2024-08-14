@@ -1,38 +1,127 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+.selected-movie img {
+  width: 300px;
+}
+
+.selected-movie p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.favorites {
+  margin-top: 20px;
+}
+
+.favorites ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.favorites li {
+  margin-bottom: 20px;
+}
+
+.favorites img {
+  width: 100px;
+  height: auto;
+}
+
+button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-item {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-item img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* ポスターの最大高さを設定 */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.movie-item h2 {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.2;
+  height: 3em; /* 2行分の高さを設定 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* 1行だけにする場合 */
+  white-space: normal; /* 2行まで許可する場合 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 行数の制限を設定 */
+  -webkit-box-orient: vertical;
+}
+
+
+@media (max-width: 600px) {
+  input {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .favorites img {
+    width: 50px;
   }
 }
